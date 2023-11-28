@@ -1,0 +1,107 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>To-Do List</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://img.freepik.com/premium-vector/one-continuous-line-drawing-couch-lamp-plant-modern-flat-furniture-living-room-interior-simple-linear-style-editable-stroke-vector-illustration_306763-187.jpg?w=2000');
+    background-size: cover;
+    background-position: fixed;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    font-size: 80%;
+}
+
+.container {
+    text-align: center;
+    color: white;
+    background-color: rgba(10, 117, 153, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-height: 80%; /* Set a maximum height */
+    min-height: 50vh;
+    overflow-y: auto;
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+        </style>
+</head>
+<body>
+
+<div class="container">
+        <h1>To-Do List</h1>
+        <input type="text" id="taskInput" placeholder="New task...">
+        <button onclick="addTask()">Add</button>
+        <ul id="taskList"></ul>
+        <!--List of suggested tasks. May add function to add these to the list. May remove or move to a different page.
+        <h2>Suggested Tasks</h2> 
+        <ul>
+            <li>Fill dishwasher</li>
+            <li>Empty dishwasher</li>
+            <li>Vacuum</li>
+        </ul>
+    -->
+    </div>
+
+    <script>
+function addTask() {
+    const taskInput = document.getElementById("taskInput");
+    const taskList = document.getElementById("taskList");
+
+    if (taskInput.value.trim() === "") {
+        alert("Add a chore to the list <3");
+        return;
+    }
+
+    const newTask = document.createElement("li");
+    newTask.innerHTML = `
+        <span>${taskInput.value}</span>
+        <button onclick="completeTask(this)">Done</button>
+    `;
+    taskList.appendChild(newTask);
+    taskInput.value = "";
+}
+
+function completeTask(button) {
+    const task = button.parentNode;
+    task.classList.toggle("completed");
+}
+
+    </script>
+</body>
+</html>

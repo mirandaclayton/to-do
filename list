@@ -57,12 +57,12 @@ li {
 }
 
 li:hover {
-    color: green;
+    color: white;
 }
 
 li.completed {
     text-decoration: line-through;
-    color: rgb(21, 35, 56);
+    color: #888;
 }
 
 .remove-button {
@@ -117,6 +117,8 @@ function completeTask(button) {
 function removeTask(button) {
         const task = button.parentNode;
         task.parentNode.removeChild(task);
+
+        
 }
 
     </script>

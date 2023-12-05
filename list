@@ -52,7 +52,7 @@ li {
     align-items: left;
     padding: 8px;
     border-bottom: 1px solid #ddd;
-    color: color; 
+    color: white; 
     transition: color .5s ease;
 }
 

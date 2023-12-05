@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>To-Do List</title>
@@ -52,12 +52,12 @@ li {
     align-items: left;
     padding: 8px;
     border-bottom: 1px solid #ddd;
-    color: initial; 
+    color: color; 
     transition: color .5s ease;
 }
 
 li:hover {
-    color: white;
+    color: rgb(0, 51, 51);
     cursor: pointer;
 }
 
